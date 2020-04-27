@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function(){
+    return redirect('site/home');
 });
+
+Route::prefix('site')->group(function () {
+    Route::get('home', 'SiteController@home');
+}); 
